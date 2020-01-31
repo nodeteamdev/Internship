@@ -1,0 +1,9 @@
+.history
+.vscode
+.git
+node_modules/
+.DS_STORE
+.netbeans
+.idea
+.sonarlint
+.node_history
