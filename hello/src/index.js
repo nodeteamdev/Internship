@@ -1,9 +1,9 @@
+'use strict';
+
 const http = require('http');
-const hello = require('./hello');
 
-hello.say()
+const hostname = '127.0.0.1';
 
-const hostname = '127.0.0.1'
 const port = 3000;
 
 const server = http.createServer((req, res) => {
@@ -13,5 +13,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
+    // eslint-disable-next-line no-console
     console.log(`Server running at http://${hostname}:${port}/`);
 });
