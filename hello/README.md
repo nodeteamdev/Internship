@@ -5,18 +5,24 @@
 
 ### Node Version Manager
 - [nvm](https://github.com/nvm-sh/nvm)
+- [n](https://www.npmjs.com/package/n)
 
 ### GIT
 - [gitignore](https://git-scm.com/docs/gitignore)
+- [commitizen](https://github.com/commitizen/cz-cli)
 
 ### Style Guide
 - [airbnb](https://github.com/airbnb/javascript)
 
-### Editor Config
+### Code Editor
 - [editorconfig](https://editorconfig.org/)
 
 ### Development
 - [nodemon](https://nodemon.io/)
 
-### Forever
+### Forevers
 - [pm2](https://pm2.keymetrics.io/)
+- [forever](https://www.npmjs.com/package/forever)
+
+### Generator
+- [yo](https://yeoman.io/)
