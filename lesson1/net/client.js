@@ -13,7 +13,7 @@ const client = net.connect({
 // The server can also receive data from the client by reading from its socket.
 client.on('data', (data) => {
     console.log(data.toString());
-    client.***();
+    client.****();
 });
 
 // When the client requests to end the TCP connection with the server, the server
