@@ -1,20 +1,9 @@
 {
-    "name": "lesson2",
+    "name": "lesson3",
     "version": "0.0.1",
     "main": "./src/server/index.js",
-    "keywords": [
-        "lesson2"
-    ],
-    "author": "Pavel Pavlov <igrokqq1991@ukr.net>",
     "scripts": {
-        "format": "prettier --config=.prettierrc.json --write '**/*.js' && eslint --fix '**/*.js'",
-        "commit": "git-cz",
         "start": "node src/server/index.js"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "node_modules/.bin/eslint \"**/*.js\" --ignore-pattern node_modules/"
-        }
     },
     "dependencies": {
         "@hapi/joi": "17.1.0",
@@ -22,7 +11,6 @@
         "compression": "1.7.1",
         "cookie-parser": "1.4.3",
         "cors": "2.8.5",
-        "dotenv": "8.2.0",
         "eslint-config-airbnb": "18.0.1",
         "express": "4.16.2",
         "helmet": "3.9.0",
@@ -35,9 +23,7 @@
         "eslint-config-prettier": "6.10.0",
         "eslint-plugin-import": "2.20.1",
         "eslint-plugin-node": "11.0.0",
-        "eslint-plugin-prettier": "3.1.2",
-        "husky": "4.2.3",
-        "prettier": "1.19.1"
+        "eslint-plugin-prettier": "3.1.2"
     },
     "config": {
         "commitizen": {
