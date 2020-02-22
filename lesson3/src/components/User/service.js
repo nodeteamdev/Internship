@@ -42,7 +42,7 @@ function create(profile) {
  * @summary update a user's profile
  * @returns {Promise<void>}
  */
-async function updateById(_id, newProfile) {
+function updateById(_id, newProfile) {
     return UserModel.updateOne({ _id }, newProfile).exec();
 }
 
