@@ -1,6 +1,3 @@
-require('dotenv').config({
-    path: `${process.cwd()}/src/config/.env`,
-});
 const express = require('express');
 const middleware = require('../config/middleware');
 const routes = require('../config/router');
