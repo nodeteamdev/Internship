@@ -7,6 +7,10 @@ const BooksSchema = new Schema(
             type: String,
             trim: true,
         },
+        titleLength: {
+            type: Number,
+            trim: false,
+        },
         description: {
             type: String,
             required: true,
