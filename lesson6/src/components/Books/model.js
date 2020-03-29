@@ -9,7 +9,7 @@ const BooksSchema = new Schema(
         },
         titleLength: {
             type: Number,
-            trim: false,
+            required: false,
         },
         description: {
             type: String,
