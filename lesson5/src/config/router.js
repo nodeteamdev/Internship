@@ -22,6 +22,9 @@ module.exports = {
          */
         app.use('/v1/users', UserRouter);
 
+
+        app.use('/v1/auth', UserRouter);
+
         /**
          * @description No results returned mean the object is not found
          * @function

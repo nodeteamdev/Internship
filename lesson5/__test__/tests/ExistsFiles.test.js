@@ -8,7 +8,7 @@ const { expect } = chai;
 
 describe('EXIST FILES', () => {
     it('CodeStyle', (done) => {
-        expect(path.join(__dirname, '../../.eslintrc.jso')).to.be.a.path();
+        expect(path.join(__dirname, '../../.eslintrc.json')).to.be.a.path();
 
         done();
     });

@@ -4,7 +4,7 @@
     "main": "./src/server/index.js",
     "scripts": {
         "start": "node src/server/index.js",
-        "test": "npx mocha ./__test__ --exit "
+        "test": "npx mocha ./__test__ --exit"
     },
     "dependencies": {
         "@hapi/joi": "17.1.0",
