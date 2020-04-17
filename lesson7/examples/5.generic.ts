@@ -15,4 +15,4 @@ function identities < T, U > (arg1: T, arg2: U): Identities < T, U > {
     return identities;
 }
 
-identities('string', true);
+identities('string', 2);

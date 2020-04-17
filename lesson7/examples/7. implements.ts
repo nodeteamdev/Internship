@@ -16,7 +16,6 @@ class User implements IUser {
     }
 
     getFullName(surname: string): string {
-
         return `${this.name} ${surname}`;
     }
 }

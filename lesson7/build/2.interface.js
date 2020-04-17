@@ -1,0 +1,3 @@
+let mySquare = {
+    color: 'black'
+};

@@ -20,6 +20,7 @@ class Admins {
     public get name(): string {
         return this._name;
     }
+    
     @validator
     public set name(n: string) {
         this._name = n;

@@ -6,7 +6,7 @@ const color: string = 'blue';
 
 const list: number[] = [1, 2, 3];
 
-const x: [string, number] = ['yay', 2]
+const x: [string, number] = ['yay', 2];
 
 const u: undefined = undefined;
 
