@@ -1,6 +1,6 @@
 ### Create proxy server.
 
-# Next urls must returns domains content with html tag `<h1>Hello world!</h1>`.
+# Next urls must returns domains content with `<h1>Hello world!</h1>` content
 
 - http://localhost:3000/?host=https://github.com
 
