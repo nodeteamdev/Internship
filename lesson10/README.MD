@@ -49,3 +49,12 @@
     1. [forwebdev](https://twitter.com/forwebdev)
     2. [habrahabr](https://habrahabr.ru/)
     2. [tproger](https://tproger.ru/tag/javascript/)
+# Frameworks
+    1. [hapi](https://hapi.dev/)
+    2. [restify](http://restify.com/)
+    3. [fastify](https://www.fastify.io/)
+    4. [meteor](https://www.meteor.com/)
+    5. [nestjs](https://nestjs.com/)
+    6. [loopback](https://loopback.io/)
+# Auto test
+    1. [webdriver](https://webdriver.io/)
