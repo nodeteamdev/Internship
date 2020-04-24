@@ -1,0 +1,15 @@
+#docker run -v $(pwd):/var/loadtest -v $HOME/.ssh:/root/.ssh -it direvius/yandex-tank
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: "token.txt"
+phantom:
+  address: app.adoric-om.com:443
+  ssl: true
+  load_profile:
+    load_type: rps
+    schedule: line(1, 20, 1m)
+  uris:
+    - /
+telegraf:
+  enabled: false
