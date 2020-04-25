@@ -38,7 +38,7 @@
 1. [runjs](https://runjs.dev/)
 2. [repl](https://repl.it/)
 # Generator
-    1. [yeoman](https://yeoman.io/)
+1. [yeoman](https://yeoman.io/)
 # YouTube
 1. [Timur Shemsedinov](https://www.youtube.com/channel/UChSGI2R2kRMjzXJuYqHWQZg)
 2. [devschacht](https://www.youtube.com/channel/UCTSVfbCKN3nZbogPtOCHcMg)
