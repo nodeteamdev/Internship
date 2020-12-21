@@ -72,9 +72,28 @@ async function deleteUser(req, res, next) {
     }
 }
 
+/**
+ * @function
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.NextFunction} next
+ * @returns {Promise < void >}
+ */
+async function find(req, res, next) {
+    try {
+        const { email } = req.params;
+        UserService.find(email).then((record) => {
+            res.status(200).json(record);
+        });
+    } catch (error) {
+        next(error);
+    }
+}
+
 module.exports = {
     findAll,
     create,
     update,
     deleteUser,
+    find,
 };

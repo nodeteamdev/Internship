@@ -27,7 +27,7 @@ module.exports = {
      * @exports
      * @method update
      * @param { user._id, user.data }
-     * @summary find user by {_id} and update its data
+     * @summary find user by {email} and update its data
      * @returns Promise<UserModel[]>
      */
     async update(email, data) {
@@ -43,5 +43,16 @@ module.exports = {
      */
     async delete(email) {
         return UserModel.deleteOne({ email });
+    },
+
+    /**
+     * @exports
+     * @method find
+     * @param { user.email }
+     * @summary find user by {email} and return it
+     * @returns Promise<UserModel[]>
+     */
+    async find(email) {
+        return UserModel.findOne({ email });
     },
 };
