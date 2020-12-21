@@ -17,6 +17,19 @@ async function findAll(req, res, next) {
   }
 }
 
+async function create(req, res, next) {
+  try {
+    const record = await UserService.create(req.body);
+    record.message = 'The user was created successfully!';
+    console.log(record);
+
+    res.status(201).json({ message: 'The user was created successfully!', record });
+  } catch (error) {
+    next(error);
+  }
+}
+
 module.exports = {
   findAll,
+  create,
 };

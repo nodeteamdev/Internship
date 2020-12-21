@@ -18,4 +18,14 @@ const router = Router();
  */
 router.get('/', UserComponent.findAll);
 
+/**
+ * Route serving list of users.
+ * @name /v1/users
+ * @function
+ * @inner
+ * @param {string} path - Express path
+ * @param {callback} middleware - Express middleware.
+ */
+router.post('/', UserComponent.create);
+
 module.exports = router;

@@ -9,6 +9,10 @@ module.exports = {
      * @returns Promise<UserModel[]>
      */
   async findAll() {
-    return await UserModel.find({});
+    return UserModel.find({});
+  },
+
+  async create(data) {
+    return new UserModel(data).save();
   },
 };
