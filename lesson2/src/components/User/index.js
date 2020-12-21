@@ -8,13 +8,13 @@ const UserService = require('./service');
  * @returns {Promise < void >}
  */
 async function findAll(req, res, next) {
-  try {
-    const users = await UserService.findAll();
+    try {
+        const users = await UserService.findAll();
 
-    res.status(200).json(users);
-  } catch (error) {
-    next(error);
-  }
+        res.status(200).json(users);
+    } catch (error) {
+        next(error);
+    }
 }
 
 /**
@@ -25,14 +25,14 @@ async function findAll(req, res, next) {
  * @returns {Promise < void >}
  */
 async function create(req, res, next) {
-  try {
-    const record = await UserService.create(req.body);
-    record.message = 'The user was created successfully!';
+    try {
+        const record = await UserService.create(req.body);
+        record.message = 'The user was created successfully!';
 
-    res.status(201).json({ message: 'The user was created successfully!', record });
-  } catch (error) {
-    next(error);
-  }
+        res.status(201).json({ message: 'The user was created successfully!', record });
+    } catch (error) {
+        next(error);
+    }
 }
 
 /**
@@ -43,15 +43,15 @@ async function create(req, res, next) {
  * @returns {Promise < void >}
  */
 async function update(req, res, next) {
-  try {
-    const { id } = req.params;
-    const record = await UserService.update(id, req.body);
-    const message = `The user with id '${id}' was successfully updated!`;
+    try {
+        const { email } = req.params;
+        const record = await UserService.update(email, req.body);
+        const message = `The user with email '${email}' was successfully updated!`;
 
-    res.status(200).json({ message, record });
-  } catch (error) {
-    next(error);
-  }
+        res.status(200).json({ message, record });
+    } catch (error) {
+        next(error);
+    }
 }
 
 /**
@@ -62,19 +62,19 @@ async function update(req, res, next) {
  * @returns {Promise < void >}
  */
 async function deleteUser(req, res, next) {
-  try {
-    const { email } = req.body;
-    UserService.delete(email).then(() => {
-      res.status(204);
-    });
-  } catch (error) {
-    next(error);
-  }
+    try {
+        const { email } = req.body;
+        UserService.delete(email).then(() => {
+            res.status(204).end();
+        });
+    } catch (error) {
+        next(error);
+    }
 }
 
 module.exports = {
-  findAll,
-  create,
-  update,
-  deleteUser,
+    findAll,
+    create,
+    update,
+    deleteUser,
 };
