@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const UserComponent = require('.');
+const joi = require('./validation');
 
 /**
  * Express router to mount user related functions on.
@@ -26,7 +27,7 @@ router.get('/', UserComponent.findAll);
  * @param {string} path - Express path
  * @param {callback} middleware - Express middleware.
  */
-router.post('/', UserComponent.create);
+router.post('/', (req, res, next) => joi.validate(req.body), UserComponent.create);
 
 /**
  * Route serving specific user updating by its email
