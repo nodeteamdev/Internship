@@ -31,11 +31,21 @@ module.exports = {
       res.header(
         'Access-Control-Allow-Headers',
         'Origin, X-Requested-With,'
-                + ' Content-Type, Accept,'
-                + ' Authorization,'
-                + ' Access-Control-Allow-Credentials',
+        + ' Content-Type, Accept,'
+        + ' Authorization,'
+        + ' Access-Control-Allow-Credentials',
       );
       res.header('Access-Control-Allow-Credentials', 'true');
+      next();
+    });
+    //my hardcode helper for begginers like me to see every request in console
+    app.use((req, res, next) => {
+      console.log(`\n${new Date().toISOString().substring(11, 19)}    [${req.method}]    ${req.hostname + req.path}
+
+      query string: ${JSON.stringify(req.query)}
+
+      body: ${JSON.stringify(req.body)}
+      `);
       next();
     });
   },

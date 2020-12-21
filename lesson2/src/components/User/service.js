@@ -1,4 +1,3 @@
-const { update } = require('./model');
 const UserModel = require('./model');
 
 module.exports = {
@@ -28,10 +27,14 @@ module.exports = {
      * @exports
      * @method update
      * @param { id, user.data }
-     * @summary find user by {id} and update all its data
+     * @summary find user by {id} and update its data
      * @returns Promise<UserModel[]>
      */
   async update(id, data) {
     return UserModel.findOneAndUpdate({ _id: id }, data, { new: true });
+  },
+
+  async delete(email) {
+    return UserModel.deleteOne({ email });
   },
 };

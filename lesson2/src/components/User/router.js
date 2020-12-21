@@ -38,4 +38,6 @@ router.post('/', UserComponent.create);
  */
 router.put('/:id', UserComponent.update);
 
+router.delete('/', UserComponent.deleteUser);
+
 module.exports = router;

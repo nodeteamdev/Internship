@@ -32,9 +32,20 @@ async function update(req, res, next) {
   try {
     const { id } = req.params;
     const record = await UserService.update(id, req.body);
-    const message = `The user with id ${id} was successfully updated!`;
+    const message = `The user with id '${id}' was successfully updated!`;
 
     res.status(200).json({ message, record });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function deleteUser(req, res, next) {
+  try {
+    const { email } = req.body;
+    UserService.delete(email).then(() => {
+      res.status(204);
+    });
   } catch (error) {
     next(error);
   }
@@ -44,4 +55,5 @@ module.exports = {
   findAll,
   create,
   update,
+  deleteUser,
 };
