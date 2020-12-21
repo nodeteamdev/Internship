@@ -29,8 +29,8 @@ router.get('/', UserComponent.findAll);
 router.post('/', UserComponent.create);
 
 /**
- * Route serving specific user full updating.
- * @name /v1/users
+ * Route serving specific user updating.
+ * @name /v1/users/:id
  * @function
  * @inner
  * @param {string} path - Express path
@@ -38,6 +38,14 @@ router.post('/', UserComponent.create);
  */
 router.put('/:id', UserComponent.update);
 
+/**
+ * Route to delete user
+ * @name /v1/users
+ * @function
+ * @inner
+ * @param {string} path - Express path
+ * @param {callback} middleware - Express middleware.
+ */
 router.delete('/', UserComponent.deleteUser);
 
 module.exports = router;

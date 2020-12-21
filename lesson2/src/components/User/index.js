@@ -17,6 +17,13 @@ async function findAll(req, res, next) {
   }
 }
 
+/**
+ * @function
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.NextFunction} next
+ * @returns {Promise < void >}
+ */
 async function create(req, res, next) {
   try {
     const record = await UserService.create(req.body);
@@ -28,6 +35,13 @@ async function create(req, res, next) {
   }
 }
 
+/**
+ * @function
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.NextFunction} next
+ * @returns {Promise < void >}
+ */
 async function update(req, res, next) {
   try {
     const { id } = req.params;
@@ -40,6 +54,13 @@ async function update(req, res, next) {
   }
 }
 
+/**
+ * @function
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.NextFunction} next
+ * @returns {Promise < void >}
+ */
 async function deleteUser(req, res, next) {
   try {
     const { email } = req.body;
