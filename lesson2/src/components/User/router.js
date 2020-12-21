@@ -19,7 +19,7 @@ const router = Router();
 router.get('/', UserComponent.findAll);
 
 /**
- * Route serving list of users.
+ * Route serving single user creation.
  * @name /v1/users
  * @function
  * @inner
@@ -27,5 +27,15 @@ router.get('/', UserComponent.findAll);
  * @param {callback} middleware - Express middleware.
  */
 router.post('/', UserComponent.create);
+
+/**
+ * Route serving specific user full updating.
+ * @name /v1/users
+ * @function
+ * @inner
+ * @param {string} path - Express path
+ * @param {callback} middleware - Express middleware.
+ */
+router.put('/:id', UserComponent.update);
 
 module.exports = router;

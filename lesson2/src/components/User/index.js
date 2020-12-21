@@ -21,9 +21,20 @@ async function create(req, res, next) {
   try {
     const record = await UserService.create(req.body);
     record.message = 'The user was created successfully!';
-    console.log(record);
 
     res.status(201).json({ message: 'The user was created successfully!', record });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function update(req, res, next) {
+  try {
+    const { id } = req.params;
+    const record = await UserService.update(id, req.body);
+    const message = `The user with id ${id} was successfully updated!`;
+
+    res.status(200).json({ message, record });
   } catch (error) {
     next(error);
   }
@@ -32,4 +43,5 @@ async function create(req, res, next) {
 module.exports = {
   findAll,
   create,
+  update,
 };
