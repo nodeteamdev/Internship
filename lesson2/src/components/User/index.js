@@ -8,15 +8,15 @@ const UserService = require('./service');
  * @returns {Promise < void >}
  */
 async function findAll(req, res, next) {
-    try {
-        const users = await UserService.findAll();
+  try {
+    const users = await UserService.findAll();
 
-        res.status(200).json(users);
-    } catch (error) {
-        next(error);
-    }
+    res.status(200).json(users);
+  } catch (error) {
+    next(error);
+  }
 }
 
 module.exports = {
-    findAll
-}
+  findAll,
+};
