@@ -1,3 +1,4 @@
+/* eslint-disable no-throw-literal */
 const UserService = require('./service');
 
 /**
@@ -46,6 +47,9 @@ async function update(req, res, next) {
     try {
         const { email } = req.params;
         const record = await UserService.update(email, req.body);
+        if (!record) {
+            throw { errmsg: `No users with email '${email}' were found!` };
+        }
         const message = `The user with email '${email}' was successfully updated!`;
 
         res.status(200).json({ message, record });
@@ -64,9 +68,10 @@ async function update(req, res, next) {
 async function deleteUser(req, res, next) {
     try {
         const { email } = req.body;
-        UserService.delete(email).then(() => {
-            res.status(204).end();
-        });
+        const result = await UserService.delete(email);
+        if (result.deletedCount === 0) {
+            throw { errmsg: `No users with email '${email}' were found!` };
+        }
     } catch (error) {
         next(error);
     }
@@ -83,7 +88,12 @@ async function find(req, res, next) {
     try {
         const { email } = req.params;
         UserService.find(email).then((record) => {
+            if (!record) {
+                throw { errmsg: `No users with email '${email}' were found!` };
+            }
             res.status(200).json(record);
+        }).catch((err) => {
+            next(err);
         });
     } catch (error) {
         next(error);
