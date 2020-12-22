@@ -7,7 +7,8 @@
     ],
     "author": "Checha Valerii <chechavalera@gmail.com>",
     "scripts": {
-        "dev": "nodemon src/server/index.js"
+        "dev": "nodemon src/server/index.js",
+        "test": "mocha"
     },
     "dependencies": {
         "@hapi/joi": "^17.1.1",
