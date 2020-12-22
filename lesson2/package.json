@@ -17,6 +17,7 @@
         "cors": "2.8.5",
         "express": "4.16.2",
         "helmet": "3.9.0",
+        "mocha": "^8.2.1",
         "mongoose": "5.7.5"
     },
     "devDependencies": {

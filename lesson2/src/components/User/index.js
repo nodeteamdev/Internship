@@ -13,9 +13,6 @@ async function findAll(req, res, next) {
 
         res.status(200).json(users);
     } catch (error) {
-        if (error.errmsg) {
-            res.status(400).json({ error: error.errmsg });
-        }
         next(error);
     }
 }
@@ -34,9 +31,6 @@ async function create(req, res, next) {
 
         res.status(201).json({ message: 'The user was created successfully!', record });
     } catch (error) {
-        if (error.errmsg) {
-            res.status(400).json({ error: error.errmsg });
-        }
         next(error);
     }
 }
@@ -56,9 +50,6 @@ async function update(req, res, next) {
 
         res.status(200).json({ message, record });
     } catch (error) {
-        if (error.errmsg) {
-            res.status(400).json({ error: error.errmsg });
-        }
         next(error);
     }
 }
@@ -77,9 +68,6 @@ async function deleteUser(req, res, next) {
             res.status(204).end();
         });
     } catch (error) {
-        if (error.errmsg) {
-            res.status(400).json({ error: error.errmsg });
-        }
         next(error);
     }
 }
@@ -98,9 +86,6 @@ async function find(req, res, next) {
             res.status(200).json(record);
         });
     } catch (error) {
-        if (error.errmsg) {
-            res.status(400).json({ error: error.errmsg });
-        }
         next(error);
     }
 }
