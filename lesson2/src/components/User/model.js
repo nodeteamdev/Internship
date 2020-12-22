@@ -5,7 +5,15 @@ const UserSchema = new Schema({
     email: {
         type: String,
         trim: true,
+        unique: true,
+        required: true,
     },
+    fullName: {
+        type: String,
+        trim: true,
+        required: true,
+    },
+    age: Number,
 }, {
     collection: 'usermodel',
     versionKey: false,

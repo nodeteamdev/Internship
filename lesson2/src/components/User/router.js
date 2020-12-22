@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const UserComponent = require('.');
-
+const validation = require('./validation');
 
 /**
  * Express router to mount user related functions on.
@@ -27,7 +27,7 @@ router.get('/', UserComponent.findAll);
  * @param {string} path - Express path
  * @param {callback} middleware - Express middleware.
  */
-router.post('/', UserComponent.create);
+router.post('/', validation.fullInBody, UserComponent.create);
 
 /**
  * Route serving specific user updating by its email
@@ -37,7 +37,7 @@ router.post('/', UserComponent.create);
  * @param {string} path - Express path
  * @param {callback} middleware - Express middleware.
  */
-router.put('/:email', UserComponent.update);
+router.put('/:email', validation.emailInParam, UserComponent.update);
 
 /**
  * Route to delete user by its email
@@ -57,6 +57,6 @@ router.delete('/', UserComponent.deleteUser);
  * @param {string} path - Express path
  * @param {callback} middleware - Express middleware.
  */
-router.get('/:email', UserComponent.find);
+router.get('/:email', validation.emailInParam, UserComponent.find);
 
 module.exports = router;
