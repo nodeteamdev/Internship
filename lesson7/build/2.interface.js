@@ -1,3 +1,0 @@
-let mySquare = {
-    color: 'black'
-};

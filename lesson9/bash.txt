@@ -1,5 +1,0 @@
-> docker build -t chechavalera/node-web-app . 
-> docker run -p 49160:8080 -d chechavalera/node-web-app
-> docker ps
-> docker logs <container_id>
-> docker exec -it <container id> /bin/bash
